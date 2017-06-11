@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <script type="text/javascript" src="../dist/slider.js"></script>
+</head>
+<body>
+  <script>
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      isIOS = navigator.userAgent.match(/iphone|ipad|ipod/i),
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        var clientHeight = docEl.clientHeight;
+        if (!clientWidth) return;
+        if (clientWidth >= 750) {
+          clientWidth = 750;
+          doc.body.style.width = 750 + 'px';
+        } else {
+          doc.body.style.width = clientWidth + 'px';
+        }
+        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+        docEl.dataset.percent = 100 * (clientWidth / 750);
+        docEl.dataset.width = clientWidth;
+        docEl.dataset.height = clientHeight;
+      };
+      recalc();
+      isIOS && doc.documentElement.classList.add('iosx' + win.devicePixelRatio);
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+    })(document, window);
+  </script>
+  <div class="m-slider1">
+    <div class="m-carousel">
+      <div class="carousel-logo">
+        <ul class="logo-wrap">
+          <li class="carousel-logo-item">
+            <img src="images/image4.jpg" alt="进击的巨人 三笠阿克曼">
+          </li>
+          <li class="carousel-logo-item">
+            <img src="images/image1.jpg" alt="海贼王 索隆">
+          </li>
+          <li class="carousel-logo-item">
+            <img src="images/image2.jpg" alt="江户川 柯南">
+          </li>
+          <li class="carousel-logo-item">
+            <img src="images/image3.jpg" alt="火影忍者 旗木卡卡西">
+          </li>
+          <li class="carousel-logo-item">
+            <img src="images/image4.jpg" alt="进击的巨人 三笠阿克曼">
+          </li>
+          <li class="carousel-logo-item">
+            <img src="images/image1.jpg" alt="海贼王 索隆">
+          </li>
+        </ul>
+      </div>
+      <div class="carousel-news">
+        <ul class="carousel-wrap">
+          <li class="carousel-wrap-item">
+            <p>进击的巨人三笠阿克曼进击的巨人三笠阿克曼进击的巨人</p>
+          </li>
+          <li class="carousel-wrap-item">
+            <p>海贼王索隆海贼王索隆海贼王索隆海贼王索隆海贼王索隆</p>
+          </li>
+          <li class="carousel-wrap-item">
+            <p>江户川柯南江户川柯南江户川柯南江户川柯南江户川柯南</p>
+          </li>
+          <li class="carousel-wrap-item">
+            <p>火影忍者旗木卡卡西火影忍者旗木卡卡西火影忍者旗木卡卡西</p>
+          </li>
+          <li class="carousel-wrap-item">
+            <p>进击的巨人三笠阿克曼进击的巨人三笠阿克曼进击的巨人</p>
+          </li>
+          <li class="carousel-wrap-item">
+            <p>海贼王索隆海贼王索隆海贼王索隆海贼王索隆海贼王索隆</p>
+          </li>
+        </ul>
+      </div>
+      <ul class="carousel-dots">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <div class="m-slider2">
+    <div class="carouse-news">
+      <ul class="carousel-wrap">
+        <li class="carousel-wrap-item">
+          <p>进击的巨人三笠阿克曼进击的巨人三笠阿克曼进击的巨人</p>
+        </li>
+        <li class="carousel-wrap-item">
+          <p>海贼王索隆海贼王索隆海贼王索隆海贼王索隆海贼王索隆</p>
+        </li>
+        <li class="carousel-wrap-item">
+          <p>江户川柯南江户川柯南江户川柯南江户川柯南江户川柯南</p>
+        </li>
+        <li class="carousel-wrap-item">
+          <p>火影忍者旗木卡卡西火影忍者旗木卡卡西火影忍者旗木卡卡西</p>
+        </li>
+        <li class="carousel-wrap-item">
+          <p>进击的巨人三笠阿克曼进击的巨人三笠阿克曼进击的巨人</p>
+        </li>
+        <li class="carousel-wrap-item">
+          <p>海贼王索隆海贼王索隆海贼王索隆海贼王索隆海贼王索隆</p>
+        </li>
+      </ul>
+    </div>
+    <!--<ul class="carouse-dots">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>-->
+  </div>
+  <script>
+    (function() {
+      var MutiSlider = new SLIDER()
+      MutiSlider.init({
+        parentContainer: '.m-carousel',
+        sliderChildrens: ['.carousel-logo ul', '.carousel-news ul'],
+        sliderBtnNode: '.carousel-dots',
+        isAutoPlay: true
+      })
+
+      var slider = new SLIDER()
+      slider.init({
+        parentContainer: '.m-slider2',
+        sliderChildrens: ['.carouse-news ul'],
+        sliderBtnNode: '.carouse-dots',
+        isAutoPlay: true,
+        distance: 10
+      })
+    })()
+  </script>
+</body>
+</html>
