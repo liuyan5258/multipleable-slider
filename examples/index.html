@@ -126,14 +126,16 @@
         parentContainer: '.m-carousel',
         sliderChildrens: ['.carousel-logo ul', '.carousel-news ul'],
         sliderBtnNode: '.carousel-dots',
-        isAutoPlay: true
+        isAutoPlay: true,
+        callback: () => {
+          console.log('动画结束后的回调')
+        }
       })
 
       var slider = new SLIDER()
       slider.init({
         parentContainer: '.m-slider2',
         sliderChildrens: ['.carouse-news ul'],
-        sliderBtnNode: '.carouse-dots',
         isAutoPlay: true,
         distance: 10
       })

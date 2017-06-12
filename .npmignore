@@ -2,3 +2,4 @@ npm-debug.log
 __build__
 examples
 devServer.js
+yarn.lock

@@ -8,10 +8,10 @@ Interfaces for netease newsapp
 ```
 npm i --save-dev mutipleable-slider
 
-import SLIDER from 'mutipleable-slider'
+import slider from 'mutipleable-slider'
 
-const slider = new SLIDER()
-slider.init({
+const slider1 = new slider()
+slider1.init({
   parentContainer: '.m-slider2',
   sliderChildrens: ['.carouse-news ul'],
   sliderBtnNode: '.carouse-dots',
@@ -32,6 +32,7 @@ this.config = {
   interval: 5000,  // 自动播放的间隔
   distance: 3,  // 最小滑动比例，3是指最小滑动触发距离为轮播容器的三分之一
   direction: 'left'  // 自动播放的方向，目前只支持left
+  callback: () => {}
 }
 ```
 
