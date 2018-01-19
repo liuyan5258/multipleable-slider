@@ -112,32 +112,28 @@
         </li>
       </ul>
     </div>
-    <!--<ul class="carouse-dots">
-      <li class="active"></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>-->
   </div>
   <script>
     (function() {
-      var MutiSlider = new SLIDER()
-      MutiSlider.init({
+      // 一个控制器控制多个轮播
+      new SLIDER({
         parentContainer: '.m-carousel',
         sliderChildrens: ['.carousel-logo ul', '.carousel-news ul'],
         sliderBtnNode: '.carousel-dots',
         isAutoPlay: true,
         callback: () => {
-          console.log('动画结束后的回调')
+          console.log('动画结束后的回调1')
         }
       })
-
-      var slider = new SLIDER()
-      slider.init({
+      // 一个控制器控制单个轮播
+      new SLIDER({
         parentContainer: '.m-slider2',
         sliderChildrens: ['.carouse-news ul'],
-        isAutoPlay: true,
-        distance: 10
+        distance: 0.2,
+        isLoopPlay: false,
+        callback: () => {
+          console.log('动画结束后的回调2')
+        }
       })
     })()
   </script>
