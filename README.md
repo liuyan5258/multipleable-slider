@@ -10,7 +10,7 @@
 
 ```shell
 npm i --save-dev multipleable-slider
-# 如果无法下载，请尝试
+# If you can not install, please try
 npm --registry=https://registry.npm.taobao.org install --save-dev multipleable-slider
 ```
 
